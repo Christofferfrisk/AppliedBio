@@ -1,0 +1,36 @@
+
+
+4.1.
+7
+
+4.2
+wc -l
+29305
+
+4.3.
+grep 'HUMAN' gpcr.tab | wc -l
+2245
+
+4.4.
+cut -f 7 gpcr.tab | sort | head
+10
+
+4.5.
+cut -f 6 gpcr.tab | sort | uniq -u | wc -l
+2451
+
+5
+find -name '*fasta' > yeast_list.txt
+while read yfile; do
+   mafft $yfile > $yfile.mafft
+done <yeast_list.txt
+
+b.
+1.
+grep -c '>' protein.fa
+42388
+
+2.
+grep -v '>' protein.fa | wc
+
+
